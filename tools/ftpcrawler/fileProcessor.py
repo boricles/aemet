@@ -10,6 +10,7 @@ import gzip, time
 prefixes =('@base <http://aemet.linkeddata.es/ontology/> .\n' +
            '@prefix aemet: <http://aemet.linkeddata.es/ontology/> .\n' +
            '@prefix observation: <http://aemet.linkeddata.es/resource/Observation/> .\n' +
+           '@prefix featureOfInterest: <http://aemet.linkeddata.es/resource/FeatureOfInterest/> .\n' +
            '@prefix prop: <http://aemet.linkeddata.es/ontology/> .\n' +
            '@prefix station: <http://aemet.linkeddata.es/resource/WeatherStation/> .\n'+
            '@prefix interval: <http://aemet.linkeddata.es/resource/Interval/> .\n'+
@@ -34,7 +35,7 @@ obsT = Template ('observation:at_${time}_of_${stationId}_on_${prop} a aemet:Obse
         '\tprop:valueOfObservedData "$value"^^xsd:$type ;\n' +
         '\tprop:observedDataQuality "$quality"^^xsd:int ;\n' +
         '\tssn:observedProperty $propClass:$prop ;\n' +
-        '\tssn:featureOfInterest aemet:meteorologicalCondition ;\n' +
+        '\tssn:featureOfInterest featureOfInterest:meteorologicalCondition ;\n' +
         '\tssn:observedBy station:id$stationId ;\n' +
         '\tprop:observedInInterval interval:tenMinutes_since_$time ;\n' +
         '\t.\n\n')
