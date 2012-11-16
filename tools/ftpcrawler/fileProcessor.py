@@ -49,6 +49,7 @@ timeT = Template ('interval:tenMinutes_since_$time a time:Interval ;\n' +
          '\t.\n\n' +
          '<http://aemet.linkeddata.es/resource/Instant/t$time> a time:Instant ; \n' +
          '\ttime:inDateTime <http://aemet.linkeddata.es/resource/DateTimeDescription/dtd$time> ;\n' +
+         '\ttime:inXSDDateTime "$xsddt"^^xsd:dateTime ;\n' +
          '\t.\n\n' +
          '<http://aemet.linkeddata.es/resource/DateTimeDescription/dtd$time> a time:DateTimeDescription ;\n' +
          '\ttime:unitType time:unitMinute ;\n'+
@@ -61,7 +62,6 @@ timeT = Template ('interval:tenMinutes_since_$time a time:Interval ;\n' +
          '\ttime:month "$month"^^xsd:int ;\n' +
          '\ttime:year "$year"^^xsd:int ;\n' +
          '\ttime:timeZone tz-world:TZT ;\n' +
-         '\ttime:inXSDDateTime "$xsddt"^^xsd:dateTime ;\n' +
          '\t.\n\n')
 
 p = {"TPRE":"ambientProperty", "VIS":"ambientProperty", "HR":"humidityAmbientProperty", "TPR":"humidityAmbientProperty",
